@@ -16,7 +16,10 @@ Then visit `http://localhost:8080`. A local server is required for the browser s
 ## Included, working now
 
 - Responsive dashboard, multiple stateful workspace tabs, coaching chat, game library, opening lab, endgame and tactic views, settings, and a video-call-style workspace.
-- Interactive local board with selectable/movable pieces, FEN board-layout loading, PGN metadata import, and board annotations via last-move highlighting.
+- Premium classic-green interactive board with rank/file coordinates, styled pieces, selectable/movable pieces, FEN board-layout loading, PGN metadata import, and last-move highlighting.
+- A four-part guided course library: calculation, Open Sicilian structures, rook endgames, and game-review method.
+- A Stockfish Web Worker adapter (`engine-worker.js`). It requests a real UCI engine line asynchronously and only displays values emitted by the engine. A connection/Worker failure is shown as unavailable instead of invented analysis.
+- Call room controls request microphone and camera only after a user presses the relevant control. The camera is a local preview, and browser speech recognition/synthesis powers voice input plus an optional coach voice where the browser supports Web Speech.
 - Explicit browser `getDisplayMedia()` screen-share consent flow. The demo never captures or transmits a screen unless the browser permission flow is completed.
 - No invented player ratings, engine evaluation, games, opening statistics, tablebase results, or account access.
 
@@ -43,6 +46,7 @@ Validate parameters server-side and expose a fixed allowlist: `getCurrentPositio
 - A browser cannot secretly inspect arbitrary desktop applications. Screen sharing requires a user’s selection and permission; transmitting frames to a vision model needs prominent consent and a service agreement.
 - This prototype’s board intentionally allows free exploration. Add `chess.js` before presenting moves as legal.
 - The UI labels Stockfish and opening data as unavailable until a real adapter supplies verifiable results.
+- Browser speech recognition is browser/vendor dependent. For production-quality continuous speech and a genuine realtime AI coach voice, use a server-side realtime provider; never expose its API key in the browser.
 
 ## Tests to add in the production app
 
