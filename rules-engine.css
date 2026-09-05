@@ -1,0 +1,1 @@
+.sq.legal:after{content:'';width:24%;aspect-ratio:1;border-radius:50%;background:#213e1db3;position:absolute;z-index:3}.sq.legal:has(.piece-image):after{width:82%;height:82%;background:transparent;border:4px solid #d6c847;border-radius:2px}.sq.selected{box-shadow:inset 0 0 0 4px #e8d259!important}
