@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChessCoach AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">♞</span><span>ChessCoach <i>AI</i></span></a>
+      <nav id="nav" aria-label="Main navigation">
+        <button class="nav-item active" data-page="dashboard"><span>⌘</span>Dashboard</button>
+        <button class="nav-item" data-page="play"><span>♟</span>Play</button>
+        <button class="nav-item" data-page="analyze"><span>◫</span>Analyze</button>
+        <button class="nav-item" data-page="games"><span>▤</span>My Games</button>
+        <button class="nav-item" data-page="openings"><span>♜</span>Openings</button>
+        <button class="nav-item" data-page="endgames"><span>♚</span>Endgames</button>
+        <button class="nav-item" data-page="tactics"><span>✦</span>Tactics</button>
+        <button class="nav-item" data-page="plan"><span>✓</span>Training Plan</button>
+        <button class="nav-item" data-page="coach"><span>◉</span>AI Coach</button>
+        <button class="nav-item" data-page="call"><span>◌</span>Call</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="connection" id="connectBtn"><span class="status-dot"></span><span><b>Chess.com</b><small>Connect account</small></span><span>›</span></button>
+        <button class="settings nav-item" data-page="settings"><span>⚙</span>Settings</button>
+      </div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <label class="search"><span>⌕</span><input id="search" placeholder="Search games, openings, positions…" /></label>
+        <div class="top-status"><span class="mode-badge">TEACHER MODE</span><span title="Microphone">🎙</span><span title="Camera">📷</span><span title="Screen share">▱</span><button class="avatar">AR</button></div>
+        <button class="primary" id="startSession">✦ START COACHING SESSION</button>
+      </header>
+      <section class="workspace-tabs"><div id="tabs"></div><button id="newTab" title="New workspace">+</button></section>
+      <div id="view"></div>
+    </main>
+  </div>
+  <dialog id="modal"><button class="close" aria-label="Close">×</button><div id="modalContent"></div></dialog>
+  <template id="dashboardTemplate">
+    <section class="page dashboard">
+      <div class="welcome"><div><p class="eyebrow">YOUR PERSONAL CHESS WORKSPACE</p><h1>Welcome back, <em>Aaravraohi.</em></h1><p>Pick up where your thinking left off. Your coach is ready.</p></div><button class="primary" data-action="call">🎙 START A CALL</button></div>
+      <div class="stats-grid">
+        <article class="hero-stat"><span class="eyebrow">CHESS.COM CONNECTION</span><h2>Ready to connect</h2><p>Link your public username or import a PGN to begin an honest coaching profile.</p><button class="outline" data-action="connect">CONNECT CHESS.COM</button></article>
+        <article class="stat"><span>♞</span><p>Games analyzed</p><strong id="gamesAnalyzed">0</strong><small>Import a game to start</small></article>
+        <article class="stat"><span>◎</span><p>Coach sessions</p><strong>Demo</strong><small>Local-only by default</small></article>
+        <article class="stat"><span>↗</span><p>Training streak</p><strong>—</strong><small>No verified data yet</small></article>
+      </div>
+      <div class="dashboard-columns">
+        <article class="panel focus"><div class="panel-head"><div><p class="eyebrow">CONTINUE TRAINING</p><h2>How do you want to improve?</h2></div><button class="text-btn" data-page="plan">View plan →</button></div><div class="focus-options"><button data-page="tactics"><b>✦</b><span>Tactical calculation<small>Find forcing moves</small></span><i>→</i></button><button data-page="openings"><b>♜</b><span>Opening Lab<small>Explore ideas, not memorization</small></span><i>→</i></button><button data-page="endgames"><b>♚</b><span>Endgame Coach<small>Practice key positions</small></span><i>→</i></button></div></article>
+        <article class="panel coach-pulse"><div class="coach-orb">♞</div><p class="eyebrow">AI COACH ONLINE</p><h2>“Before we check an engine line, I want to hear your idea.”</h2><button class="outline" data-page="coach">OPEN COACH CHAT</button></article>
+      </div>
+    </section>
+  </template>
+  <script src="app.js"></script>
+</body>
+</html>
